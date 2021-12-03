@@ -1,10 +1,10 @@
 function store ({grocery, addToCart}) {
     return (
         <li>
-            <div class="store--item-icon">
+            <div className="store--item-icon">
                 <img src={grocery.image} alt={grocery.name} />
             </div>
-            <button onClick={() => addToCart(grocery.name)}>Add to cart</button>
+            <button onClick={() => addToCart(grocery)}>Add to cart</button>
         </li>
     )
 }
