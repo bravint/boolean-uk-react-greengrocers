@@ -1,17 +1,31 @@
-function CartItem (item){
+function Item ({grocery, updateQuantity}) {
+
+const UppercaseName = (grocery) => {
+    return grocery.name.charAt(0).toUpperCase() + grocery.name.slice(1);
+}
+
     return (
-        <li key={item.id}>
+        <li>
             <img
                 className="cart--item-icon"
-                src={item.image}
-                alt={item.name}
+                src={grocery.image}
+                alt={grocery.name}
             />
-            <p>item.name</p>
-            <button className="quantity-btn remove-btn center">-</button>
-            <span className="quantity-text center">{item.qty}</span>
-            <button className="quantity-btn add-btn center">+</button>
+            <p>{UppercaseName(grocery)}</p>
+            <button 
+            className="quantity-btn remove-btn center"
+            onClick={() => updateQuantity('minus', grocery)}
+            > -
+            </button>
+            <span className="quantity-text center">{grocery.qty}</span>
+            
+            <button 
+            className="quantity-btn add-btn center"
+            onClick={() => updateQuantity('plus', grocery)}
+            > +
+            </button>
         </li>
     )
 }
 
-export default CartItem
+export default Item
