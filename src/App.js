@@ -1,7 +1,11 @@
 import './styles/reset.css'
 import './styles/index.css'
+
 import StoreItem from './components/store-item'
 import StoreArr from './data/items'
+
+import Cart from './components/Cart'
+
 import { useState } from 'react'
 
 /*
@@ -19,14 +23,19 @@ const initialStoreItems = []
 
 export default function App() {
 
+
   const addToCart = (e) => {
     console.log(e)
   }
+
+const [cart, setCart] = useState(initialStoreItems)  // Setup state here...
+
 
   return (
     <>
       <header id="store">
         <h1>Greengrocers</h1>
+
         <ul class="item-list store--item-list">
           {StoreArr.map(grocery =>
               <StoreItem
@@ -37,22 +46,7 @@ export default function App() {
           )}
         </ul>
       </header>
-      <main id="cart">
-        <h2>Your Cart</h2>
-        <div class="cart--item-list-container">
-          <ul class="item-list cart--item-list">
-            {/* Wrtite some code here... */}
-          </ul>
-        </div>
-        <div class="total-section">
-          <div>
-            <h3>Total</h3>
-          </div>
-          <div>
-            <span class="total-number">£0.00</span>
-          </div>
-        </div>
-      </main>
+      < Cart cart={cart} setCart={setCart}/>
       <div>
         Icons made by
         <a
