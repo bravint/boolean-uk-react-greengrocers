@@ -3,60 +3,70 @@ export default [
         id: "001-beetroot",
         name: "beetroot",
         price: 1.80,
-        image: "assets/icons/001-beetroot.svg"
+        image: "assets/icons/001-beetroot.svg",
+        qty: 0
     },
     {
         id: "002-carrot",
         name: "carrot",
         price: 0.40,
-        image: "assets/icons/002-carrot.svg"
+        image: "assets/icons/002-carrot.svg",
+        qty: 0
     },
     {
-        is: "003-apple",
+        id: "003-apple",
         name: "apple",
         price: 0.62,
-        image: "assets/icons/003-apple.svg"
+        image: "assets/icons/003-apple.svg",
+        qty: 0
     },
     {
-        is: "004-apricot",
+        id: "004-apricot",
         name: "apricot",
         price: 1.75,
-        image: "assets/icons/004-apricot.svg"
+        image: "assets/icons/004-apricot.svg",
+        qty: 0
     },
     {
-        is: "005-avocado",
+        id: "005-avocado",
         name: "avocado",
         price: 0.75,
-        image: "assets/icons/005-avocado.svg"
+        image: "assets/icons/005-avocado.svg",
+        qty: 0
     },
     {
-        is: "006-bananas",
+        id: "006-bananas",
         name: "bananas",
         price: 0.64,
-        image: "assets/icons/006-bananas.svg"
+        image: "assets/icons/006-bananas.svg",
+        qty: 0
     },
     {
-        is: "007-bell-pepper",
+        id: "007-bell-pepper",
         name: "bell-pepper",
         price: 0.45,
-        image: "assets/icons/007-bell-pepper.svg"
+        image: "assets/icons/007-bell-pepper.svg",
+        qty: 0
     },
     {
-        is: "008-berry",
+        id: "008-berry",
         name: "berry",
         price: 2.00,
-        image: "assets/icons/008-berry.svg"
+        image: "assets/icons/008-berry.svg",
+        qty: 0
     },
     {
-        is: "009-blueberry",
+        id: "009-blueberry",
         name: "blueberry",
         price: 2.00,
-        image: "assets/icons/009-blueberry.svg"
+        image: "assets/icons/009-blueberry.svg",
+        qty: 0
     },
     {
-        is: "010-eggplant",
+        id: "010-eggplant",
         name: "eggplant",
         price: 0.69,
-        image: "assets/icons/010-eggplant.svg"
+        image: "assets/icons/010-eggplant.svg",
+        qty: 0
     }
 ]
