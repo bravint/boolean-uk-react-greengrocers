@@ -1,4 +1,4 @@
-function Item ({grocery, updateQuantity}) {
+function CartItem ({grocery, updateQuantity}) {
 
 const UppercaseName = (grocery) => {
     return grocery.name.charAt(0).toUpperCase() + grocery.name.slice(1);
@@ -28,4 +28,4 @@ const UppercaseName = (grocery) => {
     )
 }
 
-export default Item
+export default CartItem

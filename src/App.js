@@ -4,41 +4,32 @@ import './styles/index.css'
 import CartItem from './components/CartItem'
 import StoreItem from './components/StoreItem'
 import StoreArr from './data/items'
-
 import { useState } from 'react'
 
 export default function App() {
 
   const initialStoreItems = []
-  const [cart, setCart] = useState(initialStoreItems)  // Setup state here... cart initally == empty array
+  const [cart, setCart] = useState(initialStoreItems)
 
   const CartTotal = () => {
       let total = 0
-      cart.forEach(element => total += ((element.price)*(element.qty)))
+      cart.forEach(element => total += element.price*element.qty)
       return total.toFixed(2)
   }
   
   const updateQuantity = (input, grocery) => {
-    //console.log(input)
-    let objIndex = cart.findIndex(element => element.id == grocery.id) //find position of grocery in cart array
-    //console.log(objIndex)
-    let newCart = cart.filter(element => element.id !== grocery.id) //make newCart array without grocery
-    //console.log('filter', newCart)
-    if (grocery.qty > 0) {
-      (input == 'plus' ? grocery.qty++ : grocery.qty--) //update qty of grocery, qty-- does not happen if qty is already == 0
-    }
-    if (grocery.qty == 0) return setCart(newCart) //if grocery.qty == 0 then state updates with NewArray without grocery
-    newCart.splice(objIndex,0,grocery) // grocery is pushed back into newCart array in its original position, so its postion in the cart is retained
-    //console.log('ready', newCart)
-    setCart(newCart) //replace cart in state with NewCart
+    const objIndex = cart.findIndex(element => element.id === grocery.id)
+    const newCart = cart.filter(element => element.id !== grocery.id)
+    grocery.qty > 0 && input === 'plus' ? grocery.qty++ : grocery.qty--
+    grocery.qty === 0 ? setCart(newCart) : newCart.splice(objIndex, 0, grocery)
+    setCart(newCart)
   }
 
   const addToCart = (grocery) => {
     let objIndex = cart.findIndex(element => element.id == grocery.id)
-    //console.log (objIndex)
     if (objIndex >= 0) return updateQuantity ('plus', grocery)
     grocery.qty++
-    setCart([...cart, grocery]) //push grocery object to end of clone of cart and update state with modified clone
+    setCart([...cart, grocery])
   }
 
   return (
@@ -73,7 +64,7 @@ export default function App() {
               <h3>Total</h3>
           </div>
           <div>
-              <span className="total-number">`£{CartTotal()}`</span>
+              <span className="total-number">£{CartTotal()}</span>
           </div>
         </div>
       </main>

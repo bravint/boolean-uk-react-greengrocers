@@ -1,4 +1,4 @@
-function store ({grocery, addToCart}) {
+function StoreItem ({grocery, addToCart}) {
     return (
         <li>
             <div className="store--item-icon">
@@ -9,4 +9,4 @@ function store ({grocery, addToCart}) {
     )
 }
 
-export default store
+export default StoreItem
